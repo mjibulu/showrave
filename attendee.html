@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShowRave Attendee</title>
+  <meta name="description" content="Mock attendee dashboard for ShowRave.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="attendee">
+  <div class="topbar">
+    <div class="container inner">
+      <small>Your events, saved moments, tickets, and notifications in one place.</small>
+      <a class="pill" href="./index.html">Back to home</a>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container nav__row">
+      <a class="brand" href="./index.html" aria-label="ShowRave home">
+        <img class="logo logo--light only-desktop" src="./assets/logo.svg" alt="ShowRave" height="45">
+        <img class="logo logo--dark only-desktop" src="./assets/dark-logo.svg" alt="ShowRave" height="45">
+        <img class="logo only-mobile" src="./assets/showrave-mobile.svg" alt="ShowRave" height="42">
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      </button>
+      <nav class="menu" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a class="active" href="./attendee.html">Attendee</a>
+        <a href="./organiser.html">Organiser</a>
+        <a class="cta" href="#tickets">My tickets</a>
+        <a class="cta primary" href="#saved">Saved events</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+    <div class="drawer__header">
+      <a class="brand" href="./index.html"><img class="logo" src="./assets/showrave-mobile.svg" alt="ShowRave" height="34"></a>
+      <button id="drawerClose" class="iconbtn" aria-label="Close menu">×</button>
+    </div>
+    <nav class="drawer__links">
+      <a href="./index.html">Home</a>
+      <a href="./attendee.html">Attendee</a>
+      <a href="./organiser.html">Organiser</a>
+      <a href="#tickets">My tickets</a>
+      <a href="#saved">Saved events</a>
+    </nav>
+  </aside>
+
+  <section class="dashboard-hero">
+    <div class="container dashboard-hero__grid">
+      <div>
+        <p class="eyebrow">Attendee dashboard</p>
+        <h1>Welcome back, Ada.</h1>
+        <p class="muted hero-text">This page uses mock data to present the attendee side of ShowRave in a layout inspired by the main app experience.</p>
+      </div>
+      <div class="dashboard-hero__panel">
+        <div class="notif-mini">
+          <strong>Next event</strong>
+          <span data-bind="attendee-next-event"></span>
+        </div>
+        <div class="notif-mini">
+          <strong>Unread notifications</strong>
+          <span data-bind="attendee-unread"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dashboard-shell">
+    <div class="container dashboard-grid">
+      <aside class="dashboard-side card">
+        <div class="dashboard-side__header">
+          <div class="avatar">A</div>
+          <div>
+            <strong>Ada Okafor</strong>
+            <div class="muted">Attendee</div>
+          </div>
+        </div>
+        <nav class="side-nav">
+          <a class="active" href="#overview">Overview</a>
+          <a href="#tickets">Purchased tickets</a>
+          <a href="#saved">Saved events</a>
+          <a href="#notifications">Notifications</a>
+        </nav>
+      </aside>
+
+      <div class="dashboard-main">
+        <section class="stats-grid" id="overview" data-render="attendeeStats"></section>
+
+        <section class="card dashboard-section" id="tickets">
+          <div class="section-head">
+            <div>
+              <h3>Purchased tickets</h3>
+              <p class="muted">Mock tickets styled to resemble the attendee side of the app.</p>
+            </div>
+          </div>
+          <div class="ticket-list" data-render="attendeeTickets"></div>
+        </section>
+
+        <section class="card dashboard-section" id="saved">
+          <div class="section-head">
+            <div>
+              <h3>Saved events</h3>
+              <p class="muted">Events you bookmarked and may want to return to.</p>
+            </div>
+          </div>
+          <div class="saved-grid" data-render="savedEvents"></div>
+        </section>
+
+        <section class="card dashboard-section" id="notifications">
+          <div class="section-head">
+            <div>
+              <h3>Notifications</h3>
+              <p class="muted">Recent updates, reminders, and organiser messages.</p>
+            </div>
+          </div>
+          <div class="notification-list" data-render="notifications"></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <script src="./mock-data.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

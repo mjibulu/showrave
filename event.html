@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShowRave Event</title>
+  <meta name="description" content="Mock ShowRave event details page.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="event">
+  <div class="topbar">
+    <div class="container inner">
+      <small>Event details, ticket selection, organiser info, and related events.</small>
+      <a class="pill" href="./index.html">Back to home</a>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container nav__row">
+      <a class="brand" href="./index.html" aria-label="ShowRave home">
+        <img class="logo logo--light only-desktop" src="./assets/logo.svg" alt="ShowRave" height="45">
+        <img class="logo logo--dark only-desktop" src="./assets/dark-logo.svg" alt="ShowRave" height="45">
+        <img class="logo only-mobile" src="./assets/showrave-mobile.svg" alt="ShowRave" height="42">
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      </button>
+      <nav class="menu" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./attendee.html">Attendee</a>
+        <a href="./organiser.html">Organiser</a>
+        <a class="active" href="./event.html">Event</a>
+        <a class="cta primary" href="#ticketPanel">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+    <div class="drawer__header">
+      <a class="brand" href="./index.html"><img class="logo" src="./assets/showrave-mobile.svg" alt="ShowRave" height="34"></a>
+      <button id="drawerClose" class="iconbtn" aria-label="Close menu">×</button>
+    </div>
+    <nav class="drawer__links">
+      <a href="./index.html">Home</a>
+      <a href="./attendee.html">Attendee</a>
+      <a href="./organiser.html">Organiser</a>
+      <a href="./event.html">Event</a>
+      <a href="#ticketPanel">Book now</a>
+    </nav>
+  </aside>
+
+  <section class="event-page-hero">
+    <div class="container">
+      <div class="event-top-dts">
+        <div class="event-top-date">
+          <span class="event-month" data-bind="event-month"></span>
+          <span class="event-date" data-bind="event-day"></span>
+        </div>
+        <div class="event-top-dt">
+          <h1 class="event-main-title" data-bind="event-name"></h1>
+          <div class="event-top-info-status">
+            <span class="event-type-name"><i>•</i><span data-bind="event-organiser"></span></span>
+            <span class="event-type-name details-hr"><i>•</i><span data-bind="event-date-time"></span></span>
+            <span class="event-type-name details-hr"><i>•</i><span data-bind="event-duration"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section event-dt-block">
+    <div class="container event-layout">
+      <div class="event-main-column">
+        <article class="card event-hero-card">
+          <div class="event-img event-img--mock" data-bind="event-theme"></div>
+          <div class="additional-images" data-render="eventGallery"></div>
+        </article>
+
+        <article class="card event-content-card">
+          <div class="event-actions-row">
+            <div class="event-dt-right-group">
+              <div class="event-dt-right-content">
+                <h4>Location</h4>
+                <h5 class="mb-0" data-bind="event-location"></h5>
+                <p class="muted" data-bind="event-address"></p>
+              </div>
+            </div>
+            <div class="calendar-actions">
+              <a class="pill pill--sm" href="#ticketPanel">Book now</a>
+              <a class="pill pill--sm dark" href="#relatedEvents">More events</a>
+            </div>
+          </div>
+
+          <div class="event-rich-grid">
+            <div>
+              <h3>About this event</h3>
+              <p class="muted" data-bind="event-description"></p>
+              <div class="event-meta-list">
+                <div><strong>Category</strong><span data-bind="event-category"></span></div>
+                <div><strong>Dress code</strong><span data-bind="event-dress"></span></div>
+                <div><strong>Age policy</strong><span data-bind="event-age"></span></div>
+              </div>
+            </div>
+            <div>
+              <h3>Line-up and highlights</h3>
+              <ul class="event-bullets" data-render="eventHighlights"></ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <aside class="event-sidebar">
+        <section class="card ticket-panel" id="ticketPanel">
+          <h3>Select tickets</h3>
+          <div class="ticket-selection-list" data-render="eventTickets"></div>
+          <div class="ticket-summary">
+            <div>
+              <span class="muted">Items</span>
+              <strong data-bind="event-summary-items">0 items</strong>
+            </div>
+            <div>
+              <span class="muted">Total</span>
+              <strong data-bind="event-summary-total">£0.00</strong>
+            </div>
+          </div>
+          <a class="pill ticket-checkout" href="./attendee.html">Continue</a>
+        </section>
+
+        <section class="card organiser-card">
+          <h3>Posted by</h3>
+          <div class="organiser-mini">
+            <div class="avatar avatar--org">S</div>
+            <div>
+              <strong data-bind="event-organiser"></strong>
+              <div class="muted">Organiser</div>
+            </div>
+          </div>
+          <p class="muted" data-bind="event-organiser-copy"></p>
+          <a class="pill pill--sm" href="./organiser.html">View organiser</a>
+        </section>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="relatedEvents">
+    <div class="container">
+      <div class="row">
+        <div>
+          <h2>More events you may like</h2>
+          <div class="muted">Related event cards rendered from the same mock data set.</div>
+        </div>
+      </div>
+      <div class="h-scroll" data-render="eventRelated"></div>
+    </div>
+  </section>
+
+  <script src="./mock-data.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
