@@ -77,8 +77,3 @@ You can also open the other mock product views directly:
 - `http://127.0.0.1:8088/attendee.html`
 - `http://127.0.0.1:8088/organiser.html`
 - `http://127.0.0.1:8088/event.html`
-
-## Notes
-
-- The pages in this folder use mock data and safe public assets.
-- The goal is to present the ShowRave product experience without exposing private backend systems or production-only logic.
