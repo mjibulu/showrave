@@ -47,10 +47,10 @@ ShowRave brings together key parts of the organiser journey in one product exper
 
 ## Available on Mobile
 
-- Main app on Google Play: https://play.google.com/store/apps/details?id=com.showrave.mainapp
-- Main app on the App Store: https://apps.apple.com/us/app/showrave-events-tickets/id6758464948
-- Scanner app on Google Play: https://play.google.com/store/apps/details?id=com.showrave.ticketscanner
-- Scanner app on the App Store: https://apps.apple.com/us/app/ticket-scanner-showrave/id6758725925
+- Main app on Google Play: <https://play.google.com/store/apps/details?id=com.showrave.mainapp>
+- Main app on the App Store: <https://apps.apple.com/us/app/showrave-events-tickets/id6758464948>
+- Scanner app on Google Play: <https://play.google.com/store/apps/details?id=com.showrave.ticketscanner>
+- Scanner app on the App Store: <https://apps.apple.com/us/app/ticket-scanner-showrave/id6758725925>
 
 ## What You Can Explore Here
 
@@ -77,8 +77,3 @@ You can also open the other mock product views directly:
 - `http://127.0.0.1:8088/attendee.html`
 - `http://127.0.0.1:8088/organiser.html`
 - `http://127.0.0.1:8088/event.html`
-
-## Notes
-
-- The pages in this folder use mock data and safe public assets.
-- The goal is to present the ShowRave product experience without exposing private backend systems or production-only logic.
