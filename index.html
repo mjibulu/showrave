@@ -1,279 +1,284 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShowRave</title>
-  <meta name="description" content="ShowRave is an event discovery and ticketing app for attendees, organisers, and event-day teams.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="description" content="ShowRave is a connected event technology portfolio spanning discovery, ticketing, organiser operations, live messaging, event-day scanning, and event promotion.">
+  <title>ShowRave | Event technology, end to end</title>
+  <link rel="icon" type="image/png" href="./assets/main-app-icon.png">
+  <link rel="preload" href="./assets/dp-showcase.png" as="image">
   <link rel="stylesheet" href="./styles.css">
 </head>
-<body data-page="home">
-  <div class="topbar">
-    <div class="container inner">
-      <small>Discover events, create experiences, and manage entry with ShowRave.</small>
-      <a class="pill" href="./organiser.html">Create event
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14"></path>
-          <path d="M12 5l7 7-7 7"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav">
-    <div class="container nav__row">
-      <a class="brand" href="./index.html" aria-label="ShowRave home">
-        <img class="logo logo--light only-desktop" src="./assets/logo.svg" alt="ShowRave" height="45">
-        <img class="logo logo--dark only-desktop" src="./assets/dark-logo.svg" alt="ShowRave" height="45">
-        <img class="logo only-mobile" src="./assets/showrave-mobile.svg" alt="ShowRave" height="42">
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="ShowRave portfolio home">
+        <img src="./assets/main-app-icon.png" alt=""><span>ShowRave</span>
       </a>
 
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-        </svg>
-      </button>
-
-      <nav class="menu" aria-label="Primary">
-        <a class="active" href="./index.html">Home</a>
-        <a href="./attendee.html">Attendee</a>
-        <a href="./organiser.html">Organiser</a>
-        <a href="#discover">Discover</a>
-        <a href="#reviews">Reviews</a>
-        <a class="cta" href="#news">Stories</a>
-        <a class="cta primary" href="#app-download">Get the app</a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#products">Products</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#delivery">What we deliver</a>
       </nav>
+
+      <div class="header-actions">
+        <a class="text-link desktop-only" href="https://showrave.com" target="_blank" rel="noreferrer">Visit platform</a>
+        <a class="button button--small" href="https://showrave.com/contact" target="_blank" rel="noreferrer">Start a conversation</a>
+        <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden data-mobile-menu>
+      <a href="#products">Products</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#delivery">What we deliver</a>
+      <a href="https://showrave.com" target="_blank" rel="noreferrer">Visit platform</a>
+    </nav>
   </header>
 
-  <div id="backdrop" class="backdrop" aria-hidden="true"></div>
-  <aside id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
-    <div class="drawer__header">
-      <a class="brand" href="./index.html" aria-label="ShowRave home">
-        <img class="logo" src="./assets/showrave-mobile.svg" alt="ShowRave" height="34">
-      </a>
-      <button id="drawerClose" class="iconbtn" aria-label="Close menu">×</button>
-    </div>
-    <nav class="drawer__links">
-      <a href="./index.html">Home</a>
-      <a href="./attendee.html">Attendee</a>
-      <a href="./organiser.html">Organiser</a>
-      <a href="#discover">Discover</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#news">Stories</a>
-    </nav>
-    <div class="drawer__footer">
-      <a class="cta" href="#news">Stories</a>
-      <a class="cta primary" href="#app-download">Get the app</a>
-    </div>
-  </aside>
-
-  <section class="searchband" id="top">
-    <div class="container search">
-      <div class="search__field">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="M21 21l-3.6-3.6"></path>
-          </svg>
-        </span>
-        <input placeholder="Search events, artists, cities, or categories" aria-label="Search events">
-      </div>
-      <div class="tags" aria-label="Popular searches">
-        <button type="button" class="tag">Afrobeats</button>
-        <button type="button" class="tag">Concerts</button>
-        <button type="button" class="tag">Nightlife</button>
-        <button type="button" class="tag">Food and drink</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--tight">
-    <div class="container">
-      <div class="filters">
-        <a class="pill" href="#discover">This weekend</a>
-        <a class="pill" href="#discover">Trending near you</a>
-        <a class="pill" href="#discover">Online events</a>
-        <a class="pill" href="#discover">Free events</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="discover">
-    <div class="container">
-      <div class="row">
-        <div>
-          <h2>Discover events in London</h2>
-          <div class="muted">Trending events and event cards styled to feel close to the main homepage.</div>
-        </div>
-        <div class="btns" aria-label="Slide controls">
-          <button class="iconbtn" data-snap="#discoverRail" data-dir="-1" aria-label="Previous">‹</button>
-          <button class="iconbtn" data-snap="#discoverRail" data-dir="1" aria-label="Next">›</button>
-        </div>
-      </div>
-      <div id="discoverRail" class="h-scroll" data-render="discover"></div>
-    </div>
-  </section>
-
-  <section class="section popular">
-    <div class="container">
-      <div class="card host-card">
-        <div class="row">
-          <div>
-            <h5>Host a venue event or launch something online</h5>
-            <p class="muted">ShowRave supports discovery, booking, and event-day operations in one product flow.</p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">A complete event technology portfolio</p>
+          <h1>ShowRave</h1>
+          <p class="hero-lead">One connected product ecosystem for discovering events, selling tickets, supporting customers, promoting experiences, and running the door.</p>
+          <div class="hero-actions">
+            <a class="button" href="#products">Explore the products</a>
+            <a class="inline-link" href="https://showrave.com/contact" target="_blank" rel="noreferrer">Discuss a project <span aria-hidden="true">&#8599;</span></a>
           </div>
-          <a class="pill" href="./organiser.html">Create event</a>
+          <dl class="hero-proof" aria-label="Portfolio coverage">
+            <div><dt>4</dt><dd>connected products</dd></div>
+            <div><dt>Web + native</dt><dd>customer and operator surfaces</dd></div>
+            <div><dt>End to end</dt><dd>from promotion to entry</dd></div>
+          </dl>
         </div>
-      </div>
 
-      <div class="cities-grid" data-render="countries"></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div>
-          <h2>Secure your spot</h2>
-          <div class="muted">A second event rail inspired by the "Secure your spot" section on the live homepage.</div>
-        </div>
-        <a class="pill" href="#app-download">View more</a>
-      </div>
-      <div id="topRail" class="h-scroll" data-render="topEvents"></div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0" id="features">
-    <div class="container">
-      <div class="features">
-        <article class="card">
-          <div class="body feature">
-            <div>
-              <h5>Register for free</h5>
-              <p class="muted">Start discovering events and building your event profile in a few steps.</p>
+        <div class="product-stage" aria-label="ShowRave product previews" data-reveal>
+          <div class="phone phone--hero" aria-label="Main ShowRave app preview">
+            <div class="phone-bar"><span>9:41</span><span class="phone-camera"></span><span>5G</span></div>
+            <div class="app-topline">
+              <img src="./assets/main-app-icon.png" alt="">
+              <span>ShowRave</span>
+              <span class="mini-avatar">AM</span>
             </div>
-            <img class="feature-illustration" src="./assets/destination.png" alt="Register for free">
-          </div>
-        </article>
-        <article class="card">
-          <div class="body feature">
-            <div>
-              <h5>Promote your event</h5>
-              <p class="muted">Present your event with clearer structure, better highlights, and a stronger booking path.</p>
+            <div class="app-search"><span class="search-icon"></span><span>Search events</span><span class="filter-mark">&#8801;</span></div>
+            <div class="app-section-title"><strong>Featured event</strong><span>See all</span></div>
+            <div class="event-visual">
+              <span class="event-date"><b>24</b> AUG</span>
+              <div><small>LIVE EXPERIENCE</small><strong>After Hours<br>London</strong></div>
             </div>
-            <img class="feature-illustration" src="./assets/fast-booking.png" alt="Promote your event">
+            <div class="event-meta"><strong>After Hours London</strong><span>Sat, 24 Aug &middot; The Steel Yard</span></div>
+            <div class="app-nav"><span class="is-active">Discover</span><span>Tickets</span><span>Create</span><span>Account</span></div>
           </div>
-        </article>
-        <article class="card">
-          <div class="body feature">
-            <div>
-              <h5>User-friendly tools</h5>
-              <p class="muted">Give organisers and attendees a cleaner path through the parts that matter most.</p>
-            </div>
-            <img class="feature-illustration" src="./assets/support.png" alt="User-friendly tools">
-          </div>
-        </article>
-        <article class="card">
-          <div class="body feature">
-            <div>
-              <h5>Fast booking</h5>
-              <p class="muted">Help people move from interest to booked attendance without unnecessary friction.</p>
-            </div>
-            <img class="feature-illustration" src="./assets/best-price.png" alt="Fast booking">
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <section class="section band" id="app-download">
-    <div class="container">
-      <div class="app-cta">
-        <div>
-          <h2>Get our app</h2>
-          <p class="muted">Create, discover, and book on the go with the main ShowRave app, plus scanner support for event entry.</p>
-        </div>
-        <div class="app-badges">
-          <a href="https://play.google.com/store/apps/details?id=com.showrave.mainapp" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/googleplay.png" alt="Get it on Google Play">
-          </a>
-          <a href="https://apps.apple.com/us/app/showrave-events-tickets/id6758464948" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/appstore.png" alt="Download on the App Store">
-          </a>
+          <div class="stage-card stage-card--chat" aria-label="Live messaging preview">
+            <div class="preview-label"><span class="status-dot"></span> Live support</div>
+            <div class="chat-line chat-line--received">Hi, can I change the name on my ticket?</div>
+            <div class="chat-line chat-line--sent">Yes. I can help with that.</div>
+          </div>
+
+          <div class="stage-card stage-card--scanner" aria-label="Ticket scanner preview">
+            <img src="./assets/scanner-icon.png" alt="">
+            <div><small>ENTRY STATUS</small><strong>Ticket valid</strong></div>
+            <span class="check-mark" aria-hidden="true">&#10003;</span>
+          </div>
+
+          <figure class="dp-fan">
+            <img src="./assets/dp-showcase.png" alt="Two event display-picture designs created with ShowRave DP Studio">
+          </figure>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section band" id="reviews">
-    <div class="container">
-      <h2>What people are saying</h2>
-      <p class="muted">A mock review rail that mirrors the structure of the live homepage.</p>
-      <div id="reviewsRail" class="h-scroll h-scroll--reviews" data-render="reviews"></div>
-    </div>
-  </section>
-
-  <section class="section" id="news">
-    <div class="container">
-      <div class="row">
-        <h2>News, tips, and guides</h2>
-        <a class="pill" href="./README.md">View more</a>
-      </div>
-      <div id="storiesRail" class="h-scroll" data-render="stories"></div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container fgrid">
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="./organiser.html">Create event</a></li>
-          <li><a href="#news">Stories</a></li>
-          <li><a href="./README.md">Readme</a></li>
-          <li><a href="./../Github_upload_process.md">Upload guide</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Useful links</h4>
-        <ul>
-          <li><a href="#discover">Discover</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="./attendee.html">Attendee</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Menu</h4>
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./organiser.html">Organiser</a></li>
-          <li><a href="./attendee.html">Attendee</a></li>
-        </ul>
-      </div>
-      <div class="footer-brand">
-        <div class="footer-connect">
-          <h4>Download app</h4>
-          <div class="footer-stores">
-            <a href="https://play.google.com/store/apps/details?id=com.showrave.mainapp" target="_blank" rel="noopener noreferrer">
-              <img src="./assets/googleplay.png" alt="Get it on Google Play">
-            </a>
-            <a href="https://apps.apple.com/us/app/showrave-events-tickets/id6758464948" target="_blank" rel="noopener noreferrer">
-              <img src="./assets/appstore.png" alt="Download on the App Store">
-            </a>
-          </div>
-          <h4 style="margin-top:14px">Download ticket scanner</h4>
-          <a class="download-btn" href="https://apps.apple.com/us/app/ticket-scanner-showrave/id6758725925" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/showrave_scanner.png" alt="Download ticket scanner">
-          </a>
+      <div class="lifecycle-strip" aria-label="ShowRave event lifecycle">
+        <div class="shell lifecycle-track">
+          <span>Promote</span><i></i><span>Discover</span><i></i><span>Book</span><i></i><span>Message</span><i></i><span>Check in</span>
         </div>
       </div>
+    </section>
+
+    <section class="intro-band" id="products">
+      <div class="shell section-intro" data-reveal>
+        <p class="eyebrow">The portfolio</p>
+        <h2>Purpose-built products that work as one system.</h2>
+        <p>Each product solves a real part of the event journey. Together, they reduce handoffs for attendees, organisers, support teams, and door staff.</p>
+      </div>
+    </section>
+
+    <section class="product-section product-section--app" id="main-app">
+      <div class="shell product-layout">
+        <div class="product-copy" data-reveal>
+          <p class="product-number">01 / Main app</p>
+          <h2>The event journey, in a native app.</h2>
+          <p>Attendees can discover, book, manage tickets, and stay informed. Organisers can create events, manage inventory and extras, review orders, work across teams, and track performance.</p>
+          <ul class="feature-list">
+            <li>Native attendee, organiser, and admin experiences</li>
+            <li>Tickets, checkout, messaging, workspaces, and reporting</li>
+            <li>Available for iPhone and Android</li>
+          </ul>
+          <div class="store-links" aria-label="Download the ShowRave app">
+            <a href="https://apps.apple.com/us/app/showrave-events-tickets/id6758464948" target="_blank" rel="noreferrer"><img src="./assets/appstore.png" alt="Download ShowRave on the App Store"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.showrave.mainapp" target="_blank" rel="noreferrer"><img src="./assets/googleplay.png" alt="Get ShowRave on Google Play"></a>
+          </div>
+        </div>
+
+        <div class="app-showcase" data-reveal>
+          <div class="phone phone--secondary">
+            <div class="phone-bar"><span>9:41</span><span class="phone-camera"></span><span>5G</span></div>
+            <div class="workspace-row"><span class="workspace-icon">S</span><div><small>WORKSPACE</small><strong>Studio Collective</strong></div><span>&#8964;</span></div>
+            <h3>Live events</h3>
+            <div class="event-list-item"><span class="date-tile"><b>18</b> SEP</span><div><strong>Rooftop Sessions</strong><small>London &middot; 428 booked</small></div><span class="live-pill">Live</span></div>
+            <div class="event-list-item"><span class="date-tile date-tile--alt"><b>02</b> OCT</span><div><strong>Creative Exchange</strong><small>Manchester &middot; 176 booked</small></div><span class="private-pill">Private</span></div>
+            <div class="quick-stats"><div><span>604</span><small>Bookings</small></div><div><span>82%</span><small>Capacity</small></div><div><span>2</span><small>Live</small></div></div>
+            <button type="button">Create event</button>
+          </div>
+          <div class="floating-ticket">
+            <span class="ticket-stub">SR</span>
+            <div><small>YOUR TICKET</small><strong>Rooftop Sessions</strong><span>18 Sep &middot; General admission</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--scanner" id="scanner">
+      <div class="shell product-layout product-layout--reverse">
+        <div class="scanner-showcase" data-reveal>
+          <div class="scanner-device">
+            <div class="scanner-head"><img src="./assets/scanner-icon.png" alt=""><span>Ticket Scanner</span><span class="sync-pill">Offline ready</span></div>
+            <div class="current-event"><small>CURRENT EVENT</small><strong>Rooftop Sessions</strong><span>428 tickets synced</span></div>
+            <div class="scan-frame"><span></span><span></span><span></span><span></span><div class="scan-line"></div><p>Point the camera at the ticket QR code</p></div>
+            <div class="door-stats"><div><strong>186</strong><span>Admitted</span></div><div><strong>242</strong><span>Remaining</span></div><div><strong>0</strong><span>To upload</span></div></div>
+          </div>
+          <div class="validation-toast"><span class="check-mark">&#10003;</span><div><strong>Valid ticket</strong><small>Admission recorded</small></div></div>
+        </div>
+
+        <div class="product-copy" data-reveal>
+          <p class="product-number">02 / Ticket Scanner</p>
+          <h2>Fast entry, even when the venue network is not.</h2>
+          <p>A dedicated operator app for event-day validation, designed for quick decisions at the door and reliable recovery when connectivity is limited.</p>
+          <ul class="feature-list">
+            <li>Online and offline QR validation</li>
+            <li>Duplicate protection, admission history, and upload review</li>
+            <li>Account and event-PIN access for event teams</li>
+          </ul>
+          <div class="store-links" aria-label="Download Ticket Scanner">
+            <a href="https://apps.apple.com/us/app/ticket-scanner-showrave/id6758725925" target="_blank" rel="noreferrer"><img src="./assets/appstore.png" alt="Download Ticket Scanner on the App Store"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.showrave.ticketscanner" target="_blank" rel="noreferrer"><img src="./assets/googleplay.png" alt="Get Ticket Scanner on Google Play"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--chat" id="chat">
+      <div class="shell product-layout">
+        <div class="product-copy" data-reveal>
+          <p class="product-number">03 / Messaging</p>
+          <h2>Conversations stay connected to the experience.</h2>
+          <p>Real-time live support and direct messaging bring attendees, organisers, and the ShowRave support team into clear, responsive conversations across web and mobile.</p>
+          <ul class="feature-list">
+            <li>Live presence, typing states, and message delivery</li>
+            <li>Shared support inbox with attachments and notifications</li>
+            <li>Event-aware organiser and attendee conversations</li>
+          </ul>
+          <a class="inline-link inline-link--light" href="https://showrave.com/live-chat.php" target="_blank" rel="noreferrer">Open live support <span aria-hidden="true">&#8599;</span></a>
+        </div>
+
+        <div class="chat-showcase" data-reveal>
+          <div class="chat-inbox">
+            <div class="inbox-head"><div><small>SUPPORT INBOX</small><strong>Conversations</strong></div><span>12 open</span></div>
+            <div class="inbox-search">Search conversations</div>
+            <div class="conversation is-selected"><span class="avatar avatar--rose">AK</span><div><strong>Ada King</strong><p>Can I transfer my ticket?</p></div><time>Now</time></div>
+            <div class="conversation"><span class="avatar avatar--teal">JL</span><div><strong>Jon Lewis</strong><p>Thanks, that worked.</p></div><time>4m</time></div>
+            <div class="conversation"><span class="avatar avatar--gold">MS</span><div><strong>Maya Singh</strong><p>Question about event entry</p></div><time>12m</time></div>
+          </div>
+          <div class="chat-thread">
+            <div class="thread-head"><span class="avatar avatar--rose">AK</span><div><strong>Ada King</strong><small><span class="status-dot"></span> Online</small></div><button aria-label="More conversation options">&#8943;</button></div>
+            <div class="thread-body">
+              <div class="message received">Hi, can I transfer my ticket to a friend?<time>10:24</time></div>
+              <div class="message sent">Yes. Open the ticket, choose Manage, then update the attendee details.<time>10:25</time></div>
+              <div class="message received">Perfect, thank you.<time>10:26</time></div>
+            </div>
+            <div class="composer"><span>Write a reply...</span><button aria-label="Send message">&#8593;</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--dp" id="dp-studio">
+      <div class="shell product-layout product-layout--reverse">
+        <div class="dp-showcase" data-reveal>
+          <img src="./assets/dp-showcase.png" alt="Display pictures generated with ShowRave DP Studio">
+          <div class="editor-toolbar" aria-hidden="true"><span>Templates</span><span>Photo</span><span>Event details</span><strong>Download</strong></div>
+        </div>
+
+        <div class="product-copy" data-reveal>
+          <p class="product-number">04 / DP Studio</p>
+          <h2>Event promotion people can make their own.</h2>
+          <p>DP Studio turns event details and attendee photos into polished social-ready artwork, helping campaigns travel through communities without requiring design software.</p>
+          <ul class="feature-list">
+            <li>Published template library with photo-ready layouts</li>
+            <li>Guided event details, visual preview, and sharp export</li>
+            <li>Works for campaigns, conferences, celebrations, and launches</li>
+          </ul>
+          <a class="button button--dark" href="https://dp.showrave.com" target="_blank" rel="noreferrer">Explore DP Studio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecosystem" id="ecosystem">
+      <div class="shell">
+        <div class="section-intro section-intro--split" data-reveal>
+          <div><p class="eyebrow">One connected lifecycle</p><h2>Built around the event, not around isolated tools.</h2></div>
+          <p>A promotion can lead to discovery, a booking can become a conversation, and the same ticket can move cleanly through event-day validation.</p>
+        </div>
+
+        <div class="ecosystem-flow" data-reveal>
+          <article><span>01</span><h3>Reach</h3><p>Campaign artwork and event discovery bring the experience to the right audience.</p></article>
+          <article><span>02</span><h3>Convert</h3><p>Native event details, inventory, extras, seats, coupons, and checkout support the sale.</p></article>
+          <article><span>03</span><h3>Support</h3><p>Messaging keeps questions and updates close to the attendee journey.</p></article>
+          <article><span>04</span><h3>Operate</h3><p>Organiser workspaces, reporting, and event-day scanning keep teams moving.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery" id="delivery">
+      <div class="shell delivery-grid">
+        <div data-reveal>
+          <p class="eyebrow">What this portfolio demonstrates</p>
+          <h2>Product thinking across every surface.</h2>
+        </div>
+        <div class="capability-list" data-reveal>
+          <div><strong>Native mobile products</strong><span>Attendee, organiser, admin, and event-day workflows designed for repeated use.</span></div>
+          <div><strong>Operational web platforms</strong><span>Customer support, event management, promotion, and administrative workspaces.</span></div>
+          <div><strong>Connected customer journeys</strong><span>Deep links, notifications, messaging, payments, tickets, and exports working together.</span></div>
+          <div><strong>Production-minded delivery</strong><span>Responsive interfaces, offline behaviour, localisation, security, and practical operator tooling.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="shell closing-inner" data-reveal>
+        <div><p class="eyebrow">A product ecosystem with real range</p><h2>Let’s build the next useful thing.</h2></div>
+        <div><p>Talk to us about event technology, connected mobile products, or an operational platform that needs to feel as considered as the customer experience.</p><a class="button button--light" href="https://showrave.com/contact" target="_blank" rel="noreferrer">Start a conversation</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <a class="brand brand--footer" href="#top" aria-label="ShowRave home"><img src="./assets/main-app-icon.png" alt=""><span>ShowRave</span></a>
+      <p>Connected event technology for attendees, organisers, support teams, and event-day operators.</p>
+      <div class="footer-links"><a href="https://showrave.com" target="_blank" rel="noreferrer">Platform</a><a href="https://dp.showrave.com" target="_blank" rel="noreferrer">DP Studio</a><a href="https://showrave.com/contact" target="_blank" rel="noreferrer">Contact</a></div>
+      <small>&copy; <span data-year></span> ShowRave</small>
     </div>
-    <div class="copy">© <span id="yr"></span> <strong>ShowRave</strong> • All rights reserved</div>
   </footer>
 
-  <script src="./mock-data.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
