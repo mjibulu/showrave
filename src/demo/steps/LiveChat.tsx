@@ -172,12 +172,8 @@ interface SupportMessage { id: string; from: 'visitor' | 'bot' | 'agent' | 'syst
 
 function SupportWidget({ visitor }: { visitor: string }) {
   const [messages, setMessages] = useState<SupportMessage[]>([
-  {
-    id: 's0',
-    from: 'bot',
-    text: `Hi ${visitor.split(' ')[0] || 'there'}. How can I help?`,
-  },
-]);
+    { id: 's0', from: 'bot', text: `Hi ${visitor.split(' ')[0] || 'there'}. How can I help?` },
+  ]);
   const [text, setText] = useState('');
   const [typing, setTyping] = useState(false);
   const [escalated, setEscalated] = useState(false);
@@ -202,31 +198,23 @@ function SupportWidget({ visitor }: { visitor: string }) {
     later(() => {
       setTyping(false);
       if (escalated) {
-  add({ from: 'agent', text: "I'll check your account." });
-  return;
-}
-
-const answer = SUPPORT_ANSWERS.find(([pattern]) => pattern.test(value))?.[1];
-
-add({
-  from: 'bot',
-  text: answer ?? "I can't answer that. You can talk to support.",
-});
+        add({ from: 'agent', text: "I'll check your account." });
+        return;
+      }
+      const answer = SUPPORT_ANSWERS.find(([pattern]) => pattern.test(value))?.[1];
+      add({ from: 'bot', text: answer ?? "I can't answer that. You can talk to support." });
+    }, 1300);
+  };
 
   const connect = () => {
-  setEscalated(true);
-  add({ from: 'system', text: 'Connecting to support...' });
-
-  later(() => setTyping(true), 900);
-
-  later(() => {
-    setTyping(false);
-    add({
-      from: 'agent',
-      text: "Hi, I'm Sam. How can I help?",
-    });
-  }, 2600);
-};
+    setEscalated(true);
+    add({ from: 'system', text: 'Connecting to support...' });
+    later(() => setTyping(true), 900);
+    later(() => {
+      setTyping(false);
+      add({ from: 'agent', text: "Hi, I'm Sam. How can I help?" });
+    }, 2600);
+  };
 
   return (
     <BrowserFrame url="showrave.com/live-chat" className="support-frame">
