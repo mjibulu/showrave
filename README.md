@@ -1,18 +1,33 @@
 # ShowRave
 
-ShowRave is a full event platform built for creating, promoting, discovering, booking, and managing events.
+ShowRave is an event platform for creating, promoting, selling and running events.
 
-The project includes a web platform, a mobile app for iOS and Android, a dedicated ticket scanning app for door teams, real-time messaging, and a display picture generator for promotional artwork. Together they cover the full lifecycle of an event: publishing it, selling tickets, supporting attendees, and checking people in at the door.
+It covers the whole life of an event: organisers publish it and sell tickets, attendees book and share it, both sides message each other, and door teams check people in with a dedicated scanner app. It runs on the web, on iOS and Android, and in 30 languages.
+
+**[Try the interactive demo →](https://mjibulu.github.io/showrave/)**
 
 <p align="center">
-  <a href="https://showrave.com">
-    <img src="./assets/portfolio/showrave-platform.png" alt="ShowRave connected event platform" width="960">
+  <a href="https://mjibulu.github.io/showrave/">
+    <img src="./public/assets/portfolio/showrave-platform.png" alt="ShowRave event platform" width="960">
   </a>
 </p>
 
+## Try the demo
+
+The demo runs one event from start to finish in your browser. Each step uses what you did in the step before it.
+
+1. **Create an event.** Fill in the three-step form, add tickets and extras, turn on a seat map, and publish. Pick a country and the currency follows.
+2. **Open the event page.** Choose tickets, join a waitlist for a sold-out ticket, add the event to your calendar, and switch the page language.
+3. **Check out.** Pick seats on the seat map, apply the coupon `RAVE10`, and pay to get a ticket with a QR code.
+4. **Make a display picture.** Upload a photo, position it, pick a template and download a PNG with your event details on it.
+5. **Message the organiser.** Chat as the attendee and reply as the organiser, with typing indicators and read receipts, or ask the live support assistant a question.
+6. **Scan at the door.** Scan your ticket, scan it again to see a duplicate caught, go offline and sync, and watch the organiser's sales figures include your order.
+
+Nothing in the demo is saved or charged.
+
 ## ShowRave Event Platform
 
-The core platform lets organisers create events, sell tickets, manage attendees, and lets attendees find, book, and keep track of events.
+The core platform lets organisers create events, sell tickets and manage attendees, and lets attendees find, book and keep track of events.
 
 It supports free and paid events, concerts, festivals, parties, conferences, workshops, and both public and private gatherings, online or in person.
 
@@ -30,7 +45,7 @@ It supports free and paid events, concerts, festivals, parties, conferences, wor
 ### Attendee Accounts
 
 - Create and manage a personal account with a public profile
-- View saved events, bookings, orders, tickets, and notifications in one place
+- See saved events, bookings, orders, tickets, and notifications from one account
 - Manage account details, addresses, security, and preferences
 - Track a booking from order placement through to ticket delivery
 - Message organisers directly and reach live support when needed
@@ -89,7 +104,7 @@ It supports free and paid events, concerts, festivals, parties, conferences, wor
 
 - View complete order histories, filterable by status
 - Track successful, pending, failed, refunded, and cancelled orders
-- Generate professionally formatted PDF invoices and tickets
+- Generate PDF invoices and tickets
 - Display ticket holder, event, seating, and admission details
 - Keep formatting consistent across screens and documents
 - Retain booking and payment records for future reference
@@ -118,7 +133,7 @@ It supports free and paid events, concerts, festivals, parties, conferences, wor
 ### Analytics and Reports
 
 - Track ticket sales, bookings, revenue, and transaction trends
-- Filter data and export properly formatted spreadsheet reports
+- Filter data and export spreadsheet reports
 - Review campaign and promotion performance
 - Retain event records after an event has ended
 
@@ -143,11 +158,11 @@ The mobile app brings the attendee, organiser, and admin experiences to iPhone a
 
 <p align="center">
   <a href="https://showrave.com/apps">
-    <img src="./assets/portfolio/showrave-app.png" alt="ShowRave app for attendees, organisers, and administrators" width="960">
+    <img src="./public/assets/portfolio/showrave-app.png" alt="ShowRave app for attendees, organisers, and administrators" width="960">
   </a>
 </p>
 
-**Attendees** can discover events, book tickets and reserved seats, apply coupons, manage orders and tickets, add tickets to a mobile wallet, message organisers, and manage their account, all from the app.
+**Attendees** can discover events, book tickets and reserved seats, apply coupons, manage orders and tickets, add tickets to a mobile wallet, message organisers, and manage their account.
 
 **Organisers** can switch between attendee and organiser mode, work across personal and organisation workspaces, create and publish events through a guided native flow, manage tickets and finances, run advertising campaigns, and message attendees.
 
@@ -164,7 +179,7 @@ Ticket Scanner is a dedicated app for organisers and door teams to handle event 
 
 <p align="center">
   <a href="https://showrave.com/apps">
-    <img src="./assets/portfolio/ticket-scanner.png" alt="ShowRave Ticket Scanner for event entry teams" width="960">
+    <img src="./public/assets/portfolio/ticket-scanner.png" alt="ShowRave Ticket Scanner for event entry teams" width="960">
   </a>
 </p>
 
@@ -184,25 +199,25 @@ Ticket Scanner is a dedicated app for organisers and door teams to handle event 
 
 ## ShowRave Messaging
 
-A real-time messaging layer that supports live customer service and direct conversations across the products.
+Real-time messaging for live customer support and direct conversations between attendees and organisers.
 
 <p align="center">
-  <img src="./assets/portfolio/showrave-messaging.png" alt="ShowRave real-time messaging and shared support inbox" width="960">
+  <img src="./public/assets/portfolio/showrave-messaging.png" alt="ShowRave real-time messaging and shared support inbox" width="960">
 </p>
 
-Features include live chat, direct attendee and organiser messages, a shared support inbox, presence and typing indicators, attachments, link previews, and push and in-app notifications for unread messages. It supports both authenticated users and eligible guests, with delayed push delivery when a message goes unread.
+Features include live chat, direct attendee and organiser messages, a shared support inbox, presence and typing indicators, read receipts, image attachments, link previews, and push and in-app notifications for unread messages. It supports both signed-in users and eligible guests, and sends a push notification when a message goes unread.
 
 ## DP Studio
 
-[DP Studio](https://dp.showrave.com) is a standalone tool that helps attendees and organisers create personalised event display pictures for social media.
+[DP Studio](https://dp.showrave.com) lets attendees and organisers create personalised event display pictures for social media.
 
 <p align="center">
   <a href="https://dp.showrave.com">
-    <img src="./assets/portfolio/dp-studio.png" alt="ShowRave DP Studio event artwork creator" width="960">
+    <img src="./public/assets/portfolio/dp-studio.png" alt="ShowRave DP Studio event artwork creator" width="960">
   </a>
 </p>
 
-Users can browse published templates, add event and personal details, upload and position a photo, preview the result, and download or share a finished image, all without needing any design software. Every design shared this way doubles as free promotion for the event.
+Users pick a published template, paste an event link to fill in its details, upload and position a photo, add their name and a message, then download or share the finished image without any design software. Every design shared this way promotes the event for free.
 
 ## How the Products Fit Together
 
@@ -214,8 +229,22 @@ Users can browse published templates, add event and personal details, upload and
 6. Check attendees in at the door with Ticket Scanner.
 7. Review performance afterward and keep the records for next time.
 
+## Running the demo locally
+
+Requires Node.js 20.19 or later.
+
+```bash
+npm install
+npm run dev      # start a local server with hot reload
+npm run build    # type-check and build the site into docs/
+npm run preview  # serve the built site from docs/
+```
+
+The live demo is served by GitHub Pages from the `docs/` folder on `main`. To publish a change, run `npm run build` and commit the updated `docs/` folder along with your source changes.
+
 ## Links
 
+- [Interactive demo](https://mjibulu.github.io/showrave/)
 - [ShowRave](https://showrave.com)
 - [DP Studio](https://dp.showrave.com)
 - [ShowRave app downloads](https://showrave.com/apps)
